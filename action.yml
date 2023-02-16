@@ -14,7 +14,7 @@ inputs:
   destination_branch:
     description: Branch name to sync to in this repo, default is master
     required: false
-    default: master
+    default: develop
   pr_title:
     description: Pull request title
     required: false
