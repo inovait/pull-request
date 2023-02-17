@@ -68,9 +68,9 @@ runs:
     - name: "Start entrypoint"
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
-        DESTINATION_BRANCH: ${{ inputs.destination_branch: }}
-        PR_TITLE: ${{ inputs.pr_title: }}
-        PR_BODY: ${{ inputs.pr_body: }}
-        PR_REVIEWER: ${{ inputs.pr_reviewer: }}
+        DESTINATION_BRANCH: ${{ inputs.destination_branch }}
+        PR_TITLE: ${{ inputs.pr_title }}
+        PR_BODY: ${{ inputs.pr_body }}
+        PR_REVIEWER: ${{ inputs.pr_reviewer }}
       run: entrypoint.sh
       shell: bash
