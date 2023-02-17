@@ -121,18 +121,18 @@ export GITHUB_USER="$GITHUB_ACTOR"
 
 PR_ARG=(-b "$DESTINATION_BRANCH" -h "$SOURCE_BRANCH" --no-edit)
 
-if [[ ! -z "$INPUT_PR_TITLE" ]]; then
-  PR_ARG+=(-m "$INPUT_PR_TITLE")
+if [[ ! -z "$PR_TITLE" ]]; then
+  PR_ARG+=(-m "$PR_TITLE")
   if [[ ! -z "$INPUT_PR_TEMPLATE" ]]; then
     sed -i 's/`/\\`/g; s/\$/\\\$/g' "$INPUT_PR_TEMPLATE"
     PR_ARG+=(-m "$(echo -e "$(cat "$INPUT_PR_TEMPLATE")")")
-  elif [[ ! -z "$INPUT_PR_BODY" ]]; then
-    PR_ARG+=(-m "$INPUT_PR_BODY")
+  elif [[ ! -z "$PR_BODY" ]]; then
+    PR_ARG+=(-m "$PR_BODY")
   fi
 fi
 
-if [[ ! -z "$INPUT_PR_REVIEWER" ]]; then
-  PR_ARG+=(-r "$INPUT_PR_REVIEWER")
+if [[ ! -z "$PR_REVIEWER" ]]; then
+  PR_ARG+=(-r "$PR_REVIEWER")
 fi
 
 if [[ ! -z "$INPUT_PR_ASSIGNEE" ]]; then
