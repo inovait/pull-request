@@ -54,8 +54,8 @@ fi
 # enable debug after token handling
 enable_debug
 
-if [[ ! -z "$INPUT_SOURCE_BRANCH" ]]; then
-  SOURCE_BRANCH="$INPUT_SOURCE_BRANCH"
+if [[ ! -z "$SOURCE_BRANCH" ]]; then
+  SOURCE_BRANCH="$SOURCE_BRANCH"
 elif [[ ! -z "$GITHUB_REF" ]]; then
   SOURCE_BRANCH=${GITHUB_REF/refs\/heads\//}  # Remove branch prefix
 else
@@ -64,7 +64,7 @@ else
 fi
 echo_info "SOURCE_BRANCH=$SOURCE_BRANCH"
 
-DESTINATION_BRANCH="${INPUT_DESTINATION_BRANCH:-"develop"}"
+DESTINATION_BRANCH="${DESTINATION_BRANCH:-"develop"}"
 echo_info "DESTINATION_BRANCH=$DESTINATION_BRANCH"
 
 # Determine repository url

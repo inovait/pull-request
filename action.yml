@@ -69,6 +69,7 @@ runs:
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
         DESTINATION_BRANCH: ${{ inputs.destination_branch }}
+        SOURCE_BRANCH: ${{ inputs.source_branch }}
         PR_TITLE: ${{ inputs.pr_title }}
         PR_BODY: ${{ inputs.pr_body }}
         PR_REVIEWER: ${{ inputs.pr_reviewer }}
