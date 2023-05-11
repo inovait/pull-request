@@ -63,7 +63,7 @@ runs:
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: sudo apt-get --fix-missing --assume-yes update hub
+    - run: sudo apt-get --fix-missing --assume-yes install hub
       shell: bash
     - name: "Start entrypoint"
       env:
